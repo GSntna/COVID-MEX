@@ -1,0 +1,30 @@
+---
+title: "COVID-Mex"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introducción
+
+En este proyecto se construirá un modelo logístico que determine las probabilidades de morir a causa del COVID-19 en México dependiendo de las condiciones de riesgo preexistentes de los pacientes al ser internados. 
+
+Este proyecto es realizado utilizando las bases de datos históricas del COVID-19 proporcionadas por la Secretaría de Salud. Disponibles en https://www.gob.mx/salud/documentos/datos-abiertos-bases-historicas-direccion-general-de-epidemiologia 
+
+```{r df}
+df <- read.csv('201031COVID19MEXICO.csv') #Descargar la base de datos
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r plot, echo=FALSE}
+library(ggplot2)
+plot <- ggplot(df, aes(SEXO)) + geom_bar()
+print(plot)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
